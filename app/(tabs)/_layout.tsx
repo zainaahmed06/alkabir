@@ -1,45 +1,83 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-import { Platform } from 'react-native';
+import {
+  Bookings,
+  BookingsActive,
+  Calender,
+  CalenderActive,
+  Home,
+  HomeActive,
+  Inbox,
+  InboxActive,
+  Profile,
+  ProfileActive,
+} from "@/constants/TabsIcons";
+import {Tabs} from "expo-router";
+import React from "react";
 
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+const TabsLayout = () => {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
+        tabBarActiveTintColor: "#0066FF",
+        tabBarInactiveTintColor: "#9E9E9E",
+        tabBarStyle: {
+          shadowColor: "white",
+        },
       }}>
       <Tabs.Screen
-        name="index"
+        name='home'
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: "Home",
+          tabBarIcon: ({color, focused}) =>
+            focused ? <HomeActive color={color} /> : <Home color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name='bookings'
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: "Bookings",
+          tabBarIcon: ({color, focused}) =>
+            focused ? (
+              <BookingsActive color={color} />
+            ) : (
+              <Bookings color={color} />
+            ),
+        }}
+      />
+      <Tabs.Screen
+        name='calender'
+        options={{
+          title: "Calender",
+          tabBarIcon: ({color, focused}) =>
+            focused ? (
+              <CalenderActive color={color} />
+            ) : (
+              <Calender color={color} />
+            ),
+        }}
+      />
+      <Tabs.Screen
+        name='inbox'
+        options={{
+          title: "Inbox",
+          tabBarIcon: ({color, focused}) =>
+            focused ? <InboxActive color={color} /> : <Inbox color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name='profile'
+        options={{
+          title: "Profile",
+          tabBarIcon: ({color, focused}) =>
+            focused ? (
+              <ProfileActive color={color} />
+            ) : (
+              <Profile color={color} />
+            ),
         }}
       />
     </Tabs>
   );
-}
+};
+
+export default TabsLayout;
