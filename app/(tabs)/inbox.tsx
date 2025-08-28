@@ -10,7 +10,7 @@ const Inbox = () => {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: colors.backgroundTertiary,
+        backgroundColor: colors.surfaceSecondary,
       }}>
       <Text>Inbox</Text>
     </View>

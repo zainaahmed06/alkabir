@@ -35,14 +35,15 @@ const MenuList: React.FC<MenuListProps> = ({
   itemStyle,
   titleStyle,
 }) => {
-  const {colors, spacing, radius, fontSizes} = useTheme();
+  const {colors, spacing, fontSizes} = useTheme();
 
   // Define themed styles
   const themedStyles = StyleSheet.create({
     container: {
       width: "100%" as any,
-      borderRadius: radius.md,
       overflow: "hidden",
+      borderTopLeftRadius: spacing.md,
+      borderTopRightRadius: spacing.md,
       paddingBottom: spacing.xl,
       backgroundColor: colors.background,
     },
@@ -52,8 +53,6 @@ const MenuList: React.FC<MenuListProps> = ({
       justifyContent: "space-between",
       paddingVertical: spacing.md,
       paddingHorizontal: spacing.md,
-      borderBottomWidth: 0.5,
-      borderBottomColor: colors.border,
     },
     leftContent: {
       flexDirection: "row",
@@ -67,8 +66,8 @@ const MenuList: React.FC<MenuListProps> = ({
     },
     menuTitle: {
       fontSize: fontSizes.md,
-      fontWeight: "500",
-      color: colors.text,
+      fontWeight: "400",
+      color: colors.textSecondary,
       marginLeft: spacing.sm,
     },
     dangerText: {

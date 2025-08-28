@@ -10,7 +10,7 @@ const Calender = () => {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: colors.backgroundTertiary,
+        backgroundColor: colors.surfaceSecondary,
       }}>
       <Text>Calender</Text>
     </View>

@@ -53,7 +53,7 @@ const ProfileHeader = ({
     <View style={themedStyles.container}>
       <View style={themedStyles.iconContainer}>
         {showBackButton && (
-          <Pressable onPress={onBackPress}>
+          <Pressable style={themedStyles.moreButton} onPress={onBackPress}>
             <Ionicons name='chevron-back' size={24} color={colors.text} />
           </Pressable>
         )}

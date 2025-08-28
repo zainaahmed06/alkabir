@@ -1,19 +1,36 @@
+import HomeHeader from "@/components/HomeHeader";
+import {Input as SearchBar} from "@/components/Input";
 import {useTheme} from "@/theme";
+import {Ionicons} from "@expo/vector-icons";
 import React from "react";
-import {Text, View} from "react-native";
+import {SafeAreaView} from "react-native-safe-area-context";
 
 const Home = () => {
-  const {colors} = useTheme();
+  const {spacing, colors} = useTheme();
   return (
-    <View
+    <SafeAreaView
       style={{
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: colors.backgroundTertiary,
+        paddingHorizontal: spacing.md,
+        backgroundColor: colors.surfaceSecondary,
       }}>
-      <Text>Bookings</Text>
-    </View>
+      <HomeHeader
+        name='Shafqat Ullah'
+        profileImageUrl='https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg'
+        greeting='Good Morning'
+        onNotificationPress={() => console.log("Notification pressed")}
+        onBookmarkPress={() => console.log("Bookmark pressed")}
+        onProfilePress={() => console.log("Profile pressed")}
+      />
+      <SearchBar
+        size='lg'
+        placeholder='Search services'
+        startContent={
+          <Ionicons name='search' size={24} color={colors.border} />
+        }
+        endContent={<Ionicons name='filter' size={24} color={colors.text} />}
+      />
+    </SafeAreaView>
   );
 };
 

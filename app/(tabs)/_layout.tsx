@@ -10,18 +10,23 @@ import {
   Profile,
   ProfileActive,
 } from "@/constants/TabsIcons";
+import {useTheme} from "@/theme";
 import {Tabs} from "expo-router";
 import React from "react";
 
 const TabsLayout = () => {
+  const {colors} = useTheme();
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: "#0066FF",
-        tabBarInactiveTintColor: "#9E9E9E",
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.textTertiary,
         tabBarStyle: {
-          shadowColor: "white",
+          shadowColor: colors.surfaceSecondary,
+          borderTopColor: colors.border,
+          backgroundColor: colors.background,
+          borderTopWidth: 0,
         },
       }}>
       <Tabs.Screen
