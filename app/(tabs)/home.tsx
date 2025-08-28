@@ -1,3 +1,4 @@
+import CategoriesList from "@/components/Categories";
 import HomeHeader from "@/components/HomeHeader";
 import {Input as SearchBar} from "@/components/Input";
 import {useTheme} from "@/theme";
@@ -30,6 +31,7 @@ const Home = () => {
         }
         endContent={<Ionicons name='filter' size={24} color={colors.text} />}
       />
+      <CategoriesList />
     </SafeAreaView>
   );
 };
