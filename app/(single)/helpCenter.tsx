@@ -41,7 +41,7 @@ const HelpCenter = () => {
           onLoadStart={() => setIsLoading(true)}
           onLoad={() => setIsLoading(false)}
         />
-
+        {/* For Loading */}
         {isLoading && (
           <View style={styles.loadingContainer}>
             <ActivityIndicator size='large' color={colors.primary} />
