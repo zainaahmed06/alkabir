@@ -1,13 +1,6 @@
 import {Ionicons} from "@expo/vector-icons";
 import React from "react";
-import {
-  FlatList,
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import {FlatList, Image, Pressable, StyleSheet, Text, View} from "react-native";
 import {useTheme} from "../theme/useTheme";
 
 const CategoriesList = () => {
@@ -89,7 +82,7 @@ const CategoriesList = () => {
 
   const renderItem = ({item, index}: {item: any; index: number}) => {
     return (
-      <TouchableOpacity
+      <Pressable
         style={[
           styles.serviceItem,
           {
@@ -109,7 +102,7 @@ const CategoriesList = () => {
         <Text style={[styles.serviceName, {color: colors.textSecondary}]}>
           {item.name}
         </Text>
-      </TouchableOpacity>
+      </Pressable>
     );
   };
 
@@ -117,13 +110,13 @@ const CategoriesList = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={[styles.title, {color: colors.text}]}>Services</Text>
-        <TouchableOpacity>
+        <Pressable>
           <Ionicons
             name='chevron-forward'
             size={18}
             color={colors.textSecondary}
           />
-        </TouchableOpacity>
+        </Pressable>
       </View>
       <FlatList
         data={categories.slice(0, 8)}

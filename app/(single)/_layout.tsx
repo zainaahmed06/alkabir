@@ -1,11 +1,16 @@
+import {Stack} from "expo-router";
 import React from "react";
-import {Text, View} from "react-native";
 
 const SingleLayout = () => {
   return (
-    <View>
-      <Text>SingleLayout</Text>
-    </View>
+    <Stack screenOptions={{headerShown: false}}>
+      <Stack.Screen name='bookmarks' />
+      <Stack.Screen name='editable' />
+      <Stack.Screen name='notifications' />
+      <Stack.Screen name='search' />
+      <Stack.Screen name='services' />
+      <Stack.Screen name='special' />
+    </Stack>
   );
 };
 

@@ -3,8 +3,9 @@ import React from "react";
 
 const AuthLayout = () => {
   return (
-    <Stack>
+    <Stack screenOptions={{headerShown: false}}>
       <Stack.Screen name='index' />
+      <Stack.Screen name='welcome' />
       <Stack.Screen name='signin' />
       <Stack.Screen name='signup' />
       <Stack.Screen name='accountSetup' />

@@ -3,6 +3,7 @@ import ProfileCard from "@/components/ProfileCard";
 import ProfileHeader from "@/components/ProfileHeader";
 import {useTheme} from "@/theme";
 import {Feather} from "@expo/vector-icons";
+import {router} from "expo-router";
 import React from "react";
 import {ScrollView, Switch, Text} from "react-native";
 import {SafeAreaView} from "react-native-safe-area-context";
@@ -16,14 +17,14 @@ const Profile = () => {
       icon: <Feather name='user' size={24} color={colors.textSecondary} />,
       title: "Edit Profile",
       showChevron: true,
-      onPress: () => toggleTheme(),
+      onPress: () => router.push("/(single)/editprofile"),
     },
     {
       id: "notification",
       icon: <Feather name='bell' size={24} color={colors.textSecondary} />,
       title: "Notification",
       showChevron: true,
-      onPress: () => console.log("Notification pressed"),
+      onPress: () => router.push("/(single)/notifications"),
     },
     {
       id: "payment",
@@ -32,14 +33,14 @@ const Profile = () => {
       ),
       title: "Payment",
       showChevron: true,
-      onPress: () => console.log("Payment pressed"),
+      onPress: () => router.push("/(single)/payments"),
     },
     {
       id: "security",
       icon: <Feather name='shield' size={24} color={colors.textSecondary} />,
       title: "Security",
       showChevron: true,
-      onPress: () => console.log("Security pressed"),
+      onPress: () => router.push("/(single)/security"),
     },
     {
       id: "language",
@@ -49,7 +50,7 @@ const Profile = () => {
         <Text style={{color: colors.textSecondary}}>English (US)</Text>
       ),
       showChevron: true,
-      onPress: () => console.log("Language pressed"),
+      onPress: () => router.push("/(single)/language"),
     },
     {
       id: "dark-mode",
@@ -74,7 +75,7 @@ const Profile = () => {
       icon: <Feather name='lock' size={24} color={colors.textSecondary} />,
       title: "Privacy Policy",
       showChevron: true,
-      onPress: () => console.log("Privacy Policy pressed"),
+      onPress: () => router.push("/(single)/privacy"),
     },
     {
       id: "help-center",

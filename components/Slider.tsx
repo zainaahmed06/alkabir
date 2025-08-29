@@ -5,8 +5,8 @@ import {
   Dimensions,
   FlatList,
   Image,
+  Pressable,
   StyleSheet,
-  TouchableOpacity,
   View,
   ViewToken,
 } from "react-native";
@@ -87,7 +87,7 @@ const Slider: React.FC<SliderProps> = ({
   // Render each slide item
   const renderItem = ({item}: {item: SlideItem}) => {
     return (
-      <TouchableOpacity
+      <Pressable
         activeOpacity={item.onPress ? 0.8 : 1}
         onPress={item.onPress}
         style={[styles.slide, {width: width}]}>
@@ -101,7 +101,7 @@ const Slider: React.FC<SliderProps> = ({
           ]}
           resizeMode='cover'
         />
-      </TouchableOpacity>
+      </Pressable>
     );
   };
 
