@@ -12,11 +12,22 @@ import {SafeAreaView} from "react-native-safe-area-context";
 const Welcome = () => {
   const {colors} = useTheme();
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: colors.background}}>
+    <SafeAreaView
+      style={{
+        flex: 1,
+        backgroundColor: colors.background,
+      }}>
       <Onboarding
         onDone={() => router.push("/welcome")}
         onSkip={() => router.push("/welcome")}
         bottomBarHighlight={false}
+        titleStyles={{
+          fontSize: 32,
+          fontWeight: "600",
+        }}
+        containerStyles={{
+          paddingVertical: 20,
+        }}
         pages={[
           {
             backgroundColor: colors.background,

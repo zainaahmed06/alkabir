@@ -3,6 +3,7 @@ import HomeHeader from "@/components/HomeHeader";
 import {Input as SearchBar} from "@/components/Input";
 import {useTheme} from "@/theme";
 import {Ionicons} from "@expo/vector-icons";
+import {router} from "expo-router";
 import React from "react";
 import {SafeAreaView} from "react-native-safe-area-context";
 
@@ -19,9 +20,9 @@ const Home = () => {
         name='Shafqat Ullah'
         profileImageUrl='https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg'
         greeting='Good Morning'
-        onNotificationPress={() => console.log("Notification pressed")}
-        onBookmarkPress={() => console.log("Bookmark pressed")}
-        onProfilePress={() => console.log("Profile pressed")}
+        onNotificationPress={() => router.push("/(single)/notifications")}
+        onBookmarkPress={() => router.push("/(single)/bookmarks")}
+        onProfilePress={() => router.push("/(tabs)/profile")}
       />
       <SearchBar
         size='lg'

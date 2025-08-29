@@ -84,7 +84,7 @@ const Profile = () => {
       ),
       title: "Help Center",
       showChevron: true,
-      onPress: () => console.log("Help Center pressed"),
+      onPress: () => router.push("/(single)/helpCenter"),
     },
     {
       id: "invite-friends",

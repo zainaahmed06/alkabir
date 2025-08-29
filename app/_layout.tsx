@@ -7,7 +7,7 @@ export default function RootLayout() {
   return (
     <>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
-      <Stack initialRouteName='(tabs)' screenOptions={{headerShown: false}} />
+      <Stack initialRouteName='(auth)' screenOptions={{headerShown: false}} />
     </>
   );
 }
