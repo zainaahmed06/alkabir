@@ -1,6 +1,7 @@
 import {Button} from "@/components/Button";
 import {Input} from "@/components/Input";
 import {useTheme} from "@/theme";
+import {Ionicons} from "@expo/vector-icons";
 import {router} from "expo-router";
 import React, {useState} from "react";
 import {Pressable, ScrollView, StyleSheet, Text, View} from "react-native";
@@ -9,9 +10,9 @@ import {SafeAreaView} from "react-native-safe-area-context";
 // Rename component to use PascalCase for consistency
 const AddNewCard = () => {
   const {colors} = useTheme();
-  const [cardName, setCardName] = useState("Andrew Ainsley");
-  const [cardNumber, setCardNumber] = useState("2672 4738 7837 7285");
-  const [expiryDate, setExpiryDate] = useState("09/07/26");
+  const [cardName, setCardName] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
+  const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("699");
 
   const handleAddCard = () => {
@@ -33,7 +34,7 @@ const AddNewCard = () => {
         {/* Header with Back Button and Options */}
         <View style={styles.header}>
           <Pressable style={styles.backButton} onPress={() => router.back()}>
-            <Text style={{fontSize: 24, color: colors.text}}>←</Text>
+            <Ionicons name='chevron-back' size={24} color={colors.text} />
           </Pressable>
           <Text style={[styles.heading, {color: colors.text}]}>
             Add New Card
@@ -74,11 +75,9 @@ const AddNewCard = () => {
 
         {/* Card Form Fields */}
         <View style={styles.formContainer}>
-          <Text style={[styles.formLabel, {color: colors.text}]}>
-            Card Name
-          </Text>
           <Input
-            placeholder='Card Holder Name'
+            label='Name'
+            placeholder='Andrew Ainsley'
             variant='flat'
             size='lg'
             radius='lg'
@@ -87,11 +86,9 @@ const AddNewCard = () => {
             style={styles.input}
           />
 
-          <Text style={[styles.formLabel, {color: colors.text}]}>
-            Card Number
-          </Text>
           <Input
-            placeholder='0000 0000 0000 0000'
+            label='Card Number'
+            placeholder='2672 4738 7837 7285'
             variant='flat'
             size='lg'
             radius='lg'
@@ -102,11 +99,9 @@ const AddNewCard = () => {
 
           <View style={styles.formRow}>
             <View style={styles.formRowHalf}>
-              <Text style={[styles.formLabel, {color: colors.text}]}>
-                Expiry Date
-              </Text>
               <Input
-                placeholder='MM/YY'
+                label='Expiry Date'
+                placeholder='09/07/26'
                 variant='flat'
                 size='lg'
                 radius='lg'
@@ -121,8 +116,8 @@ const AddNewCard = () => {
             </View>
 
             <View style={styles.formRowHalf}>
-              <Text style={[styles.formLabel, {color: colors.text}]}>CVV</Text>
               <Input
+                label='CVV'
                 placeholder='000'
                 variant='flat'
                 size='lg'
@@ -154,7 +149,7 @@ const AddNewCard = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 24,
+    paddingHorizontal: 16,
   },
   header: {
     flexDirection: "row",
